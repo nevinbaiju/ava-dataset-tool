@@ -104,7 +104,7 @@ def visual_bbox(anno_data, action_name, keyfname, video_id, time_id, bbox_ids):
     draw_dic = {}
     for idx in bbox_ids:
         bbox = anno_data[idx][2:6]
-        action_string = action_name[int(anno_data[idx][-1])]
+        action_string = action_name[int(anno_data[idx][6])]
         cv2.rectangle(frame, (int(float(bbox[0])*frame_width),int(float(bbox[1])*frame_height)), 
                 (int(float(bbox[2])*frame_width),int(float(bbox[3])*frame_height)), [0,0,255], 1)
         x1 = int(float(bbox[0])*frame_width)
